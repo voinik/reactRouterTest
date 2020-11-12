@@ -1,0 +1,7 @@
+#konva-map-scroll-container {
+    width: calc(100% - 22px);
+    height: calc(80vh - 22px);
+    overflow: auto;
+    margin: 10px;
+    border: 1px solid grey;
+  }

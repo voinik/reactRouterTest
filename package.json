@@ -1,0 +1,41 @@
+{
+  "name": "hostingtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev:watch:low-memory",
+    "paralleltest": "parallel build-ts-backend:watch serve:backend:watch:low-memory frontend:dev:watch:wait",
+    "dev:watch:low-memory": "npm run clean && mkdirp build/backend/tests && mkdirp build/scripts/tests && parallel build-ts-backend:watch serve:backend:watch:low-memory frontend:dev:watch:wait",
+    "frontend:dev:watch:wait": "wait-on build/backend/server.js && cd src/frontend && SKIP_PREFLIGHT_CHECK=true npm start",
+    "clean": "rimraf build dist",
+    "build-frontend": "cd src/frontend && npm install && wait-on node_modules/ && SKIP_PREFLIGHT_CHECK=true npm run build && wait-on build/ && cp -R build/ ../../build/frontend",
+    "build-ts-backend:watch": "npm run build-ts-backend -- -w --preserveWatchOutput",
+    "build-ts-backend": "tsc -incremental -p tsconfig.backend.json",
+    "serve:backend:watch": "nodemon -C -d 1 --ext js --watch build/backend --exec \"node --inspect -r dotenv/config build/backend/server.js\"",
+    "serve:backend:watch:low-memory": "nodemon -C -d 1 --ext js --watch build/backend --exec \"node --max-old-space-size=450 --inspect -r dotenv/config build/backend/server.js\"",
+    "serve-frontend-from-backend": "npm run clean && mkdirp build/backend && mkdirp build/frontend && npm run build-frontend && parallel build-ts-backend:watch serve:backend:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.9",
+    "@types/helmet": "^4.0.0",
+    "@wwwouter/tslint-contrib": "1.0.0",
+    "dotenv": "^8.2.0",
+    "mkdirp": "^1.0.4",
+    "nodemon": "^2.0.6",
+    "npm-parallel": "2.0.1",
+    "rimraf": "^3.0.2",
+    "tslint": "5.20.1",
+    "tslint-microsoft-contrib": "6.2.0",
+    "typescript": "^4.0.5",
+    "wait-on": "^5.2.0"
+  }
+}

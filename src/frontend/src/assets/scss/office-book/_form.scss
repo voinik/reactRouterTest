@@ -1,0 +1,16 @@
+.register-form {
+    & i.validation-icon {
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: 18px;
+    }
+    
+    & .form-control-feedback {
+        margin-bottom: 10px;
+        color: #c42e13 !important;
+    }
+    
+    & .input-text {
+        padding-top: 10px;
+    }
+}

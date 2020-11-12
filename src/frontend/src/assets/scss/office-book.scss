@@ -1,0 +1,67 @@
+/*!
+
+ =========================================================
+ * Paper Kit React - v1.2.0 based on Paper Kit - v2.2.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/paper-kit-2
+ * Copyright 2020 Creative Tim (http://www.creative-tim.com)
+
+ * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+@import 'office-book/variables';
+@import 'office-book/mixins';
+
+// Plugins CSS
+@import "office-book/plugins/plugin-bootstrap-switch";
+@import "office-book/plugins/plugin-nouislider";
+@import "office-book/plugins/plugin-datepicker";
+
+// Core CSS
+@import "office-book/buttons";
+@import "office-book/inputs";
+@import "office-book/checkbox-radio";
+@import "office-book/progress-bars";
+@import "office-book/badges";
+@import "office-book/pagination";
+@import "office-book/typography";
+@import "office-book/misc";
+@import "office-book/labels";
+
+// components
+@import "office-book/nucleo-icons";
+@import "office-book/social-buttons";
+@import "office-book/tabs-navs";
+@import "office-book/navbars";
+@import "office-book/dropdown";
+@import "office-book/alerts";
+@import "office-book/images";
+@import "office-book/tooltips-and-popovers";
+@import "office-book/modal";
+@import "office-book/icons";
+@import "office-book/carousel";
+@import "office-book/footers";
+@import "office-book/form";
+
+// Cards
+@import "office-book/cards";
+@import "office-book/cards/card-plain";
+@import "office-book/cards/card-login";
+@import "office-book/cards/card-register";
+@import "office-book/cards/card-profile";
+
+// example pages and sections
+@import "office-book/examples";
+@import "office-book/sections";
+
+
+@import "office-book/responsive";
+
+// React Differences
+@import "react/react-differences.scss"

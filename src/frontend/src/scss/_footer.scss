@@ -1,0 +1,13 @@
+footer {
+    position: absolute; 
+    left: 0 ; right: 0; bottom: 0;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    height: $footer-height;
+    span.copyright {
+      font-size: 90%;
+      line-height: 10px;
+      text-transform: none;
+      @include heading-font;
+    }
+  }
